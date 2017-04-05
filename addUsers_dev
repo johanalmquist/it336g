@@ -1,0 +1,6 @@
+$users =Import-CSV C:\Users\Administrator\Documents\users_dev.csv
+
+foreach ($user in $users) {
+$path = "ou=test,dc=a16johal,dc=local"
+ New-ADUser -Name $user.name -SamAccountName $user.login -Department $user.Department -EmailAddress $user.Email -Description $user.Description -Path $path
+}
