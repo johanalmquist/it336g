@@ -1,4 +1,4 @@
-$users =Import-CSV C:\Users\Administrator\Documents\users_dev.csv
+$users = Import-Csv -Delimiter ";" C:\Users\Administrator\Documents\users_dev.csv
 
 foreach ($user in $users) {
 $path = "ou=$($user.Department),dc=a16johal,dc=local"
